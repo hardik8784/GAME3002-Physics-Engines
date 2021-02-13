@@ -25,7 +25,7 @@ public class ProjectileComponent : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        
+        UpdateLandingPosition();
     }
 
     private void CreateLandingDisplay()
@@ -38,38 +38,59 @@ public class ProjectileComponent : MonoBehaviour
         m_landingDisplay.GetComponent<Collider>().enabled = false;
     }
 
+    
     public void OnLaunchProjectile()
     {
+        if (!m_bIsGrounded)
+        {
+            return;
+        }
 
+        m_landingDisplay.transform.position = GetLandingPosition();
+        m_bIsGrounded = false;
+        transform.rotation = CalculationTools.CalcUtils.UpdateProjectileFacingRotation(m_landingDisplay.transform.position, transform.position);
+        //transform.LookAt(m_landingDisplay.transform.position, Vector3.up);
+
+        m_rb.velocity = m_vInitialVelocity;
     }
 
     private void UpdateLandingPosition()
     {
-
+        if (m_landingDisplay != null && m_bIsGrounded)
+        {
+            m_landingDisplay.transform.position = GetLandingPosition();
+        }
     }
 
     private Vector3 GetLandingPosition()
     {
-        return Vector3.zero;
-    }
+        float fTime = 2f * (0f - m_vInitialVelocity.y / Physics.gravity.y);
 
+        Vector3 vFlatVel = m_vInitialVelocity;
+        vFlatVel.y = 0f;
+        vFlatVel *= fTime;
+
+        return transform.position + vFlatVel;
+    }
+    #region INPUT_FUNCTIONS
     public void OnMoveForward(float value)
     {
-        
+        m_vInitialVelocity.z += value;
     }
 
     public void OnMoveBackward(float value)
     {
-      
+        m_vInitialVelocity.z -= value;
     }
 
     public void OnMoveRight(float value)
     {
-   
+        m_vInitialVelocity.x += value;
     }
 
     public void OnMoveLeft(float value)
     {
-      
+        m_vInitialVelocity.x -= value;
     }
+    #endregion
 }
