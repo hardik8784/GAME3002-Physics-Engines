@@ -18,7 +18,7 @@ public class ProjectileComponent : MonoBehaviour
     {
         m_rb = GetComponent<Rigidbody>();
         Assert.IsNotNull(m_rb, "Rigidbody is not attached!");
-
+        m_vInitialVelocity.y = 5.0f;
         CreateLandingDisplay();
     }
 
@@ -33,6 +33,7 @@ public class ProjectileComponent : MonoBehaviour
         m_landingDisplay = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
         m_landingDisplay.transform.position = Vector3.zero;
         m_landingDisplay.transform.localScale = new Vector3(1f, 0.1f, 1f);
+        m_landingDisplay.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
 
         m_landingDisplay.GetComponent<Renderer>().material.color = Color.blue;
         m_landingDisplay.GetComponent<Collider>().enabled = false;
@@ -41,13 +42,13 @@ public class ProjectileComponent : MonoBehaviour
     
     public void OnLaunchProjectile()
     {
-        if (!m_bIsGrounded)
-        {
-            return;
-        }
+        //if (!m_bIsGrounded)
+        //{
+        //    return;
+        //}
 
         m_landingDisplay.transform.position = GetLandingPosition();
-        m_bIsGrounded = false;
+        //m_bIsGrounded = false;
         transform.rotation = CalculationTools.CalcUtils.UpdateProjectileFacingRotation(m_landingDisplay.transform.position, transform.position);
         //transform.LookAt(m_landingDisplay.transform.position, Vector3.up);
 
@@ -91,6 +92,16 @@ public class ProjectileComponent : MonoBehaviour
     public void OnMoveLeft(float value)
     {
         m_vInitialVelocity.x -= value;
+    }
+
+    public void OnMoveUp(float value)
+    {
+        m_vInitialVelocity.y += value;
+    }
+
+    public void OnMoveDown(float value)
+    {
+        m_vInitialVelocity.y -= value;
     }
     #endregion
 }

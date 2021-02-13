@@ -45,6 +45,17 @@ public class ProjectileController : MonoBehaviour
         {
             m_projectile.OnMoveLeft(0.1f);
         }
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            m_projectile.OnMoveUp(0.1f);
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            m_projectile.OnMoveDown(0.1f);
+        }
+        
     }
 
 }
