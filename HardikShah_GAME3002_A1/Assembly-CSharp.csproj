@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\BallPhysics.cs" />
     <Compile Include="Assets\Scripts\CalcsUtil.cs" />
     <Compile Include="Assets\Scripts\ProjectileComponent.cs" />
+    <Compile Include="Assets\Scripts\SoccerBall.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
