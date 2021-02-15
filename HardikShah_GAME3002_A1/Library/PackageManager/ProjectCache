@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637488463230000000
+      ticks: 637488535760000000
     m_Hash: 4129500968
   m_LockFileStatus:
     m_FilePath: H:/GAME3002-Physics Engines/HardikShah_GAME3002_A1/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637488498865017995
+      ticks: 637489951638083854
     m_Hash: 1554650196
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -2589,10 +2589,20 @@ m_PackageAssets:
       errors: []
       versions:
         all:
+        - 0.1.5-preview
+        - 0.1.6-preview
+        - 0.1.9-preview
+        - 1.0.0
         - 1.0.5
+        - 1.0.6
         compatible:
+        - 0.1.5-preview
+        - 0.1.6-preview
+        - 0.1.9-preview
+        - 1.0.0
         - 1.0.5
-        verified: 1.0.5
+        - 1.0.6
+        verified: 1.0.6
       dependencies: []
       resolvedDependencies: []
       keywords:
@@ -2611,7 +2621,7 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 0
+      datePublishedTicks: 637413148740000000
       documentationUrl: 
       hasRepository: 1
       repository:
