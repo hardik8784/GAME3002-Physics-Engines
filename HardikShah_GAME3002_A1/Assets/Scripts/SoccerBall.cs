@@ -5,15 +5,15 @@ using UnityEngine;
 public class SoccerBall : MonoBehaviour
 {
 
+    public GameController Controller;
     private int Score = 0;
 
     private void OnTriggerEnter(Collider other)
     {
         if( other.gameObject.tag == "Goal")
         {
-            Debug.Log("GOAAL");
-            Score++;
-            Debug.Log("Score is:" + Score.ToString());
+            Controller.IncrementScore();
+           
         }
     }
 
