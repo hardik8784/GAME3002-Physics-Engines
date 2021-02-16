@@ -6,14 +6,15 @@ public class SoccerBall : MonoBehaviour
 {
 
     public GameController Controller;
-    private int Score = 0;
+    //private int Score = 0;
 
     private void OnTriggerEnter(Collider other)
     {
         if( other.gameObject.tag == "Goal")
         {
             Controller.IncrementScore();
-           
+            transform.position = GameObject.Find("BallPosition").transform.position;
+            this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
     }
 

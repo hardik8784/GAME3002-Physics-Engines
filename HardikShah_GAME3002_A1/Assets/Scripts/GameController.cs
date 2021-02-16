@@ -59,6 +59,7 @@ public class GameController : MonoBehaviour
             //Debug.Log("GOAAL");
             Score++;
             ScoreText.text = "Score :" + Score.ToString();
+
             //Debug.Log("Score is:" + Score.ToString());
         }
     }
