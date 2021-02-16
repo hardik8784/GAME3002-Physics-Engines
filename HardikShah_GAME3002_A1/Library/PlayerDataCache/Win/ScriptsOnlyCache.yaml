@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - GameController
+    - GoalKeeper
     - ProjectileComponent
     - ProjectileController
     - SceneManager
@@ -73,7 +74,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3048}
     - Class: 114
-      Script: {instanceID: 3358}
+      Script: {instanceID: 3092}
+    - Class: 114
+      Script: {instanceID: 3360}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -130,9 +133,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3048}
     - Class: 114
-      Script: {instanceID: 3358}
+      Script: {instanceID: 3360}
     - Class: 114
-      Script: {instanceID: 3490}
+      Script: {instanceID: 3492}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -510,6 +513,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_ScrollbarEventHandler
+  - hash:
+      serializedVersion: 2
+      Hash: ce30ddc607cfbe0a03874794cf9802b4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GoalKeeper
   - hash:
       serializedVersion: 2
       Hash: f40fedccd4adbc76605bea6d67537e4b
