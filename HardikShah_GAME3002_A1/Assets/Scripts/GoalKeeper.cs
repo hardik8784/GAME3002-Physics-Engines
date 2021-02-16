@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GoalKeeper : MonoBehaviour
 {
-    public float GoalKeeperSpeed = 2.5f;
+    public float GoalKeeperSpeed = 6.0f;
 
 
     // Start is called before the first frame update

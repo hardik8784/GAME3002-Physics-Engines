@@ -1,0 +1,14 @@
+//***************************************************************************
+//
+// GAME3002 - Physics Engines - Assignment1 by Hardik Dipakbhai Shah - 101249099
+// HardikShah_GAME3002_A1
+// Assignment 1 submission.
+// 
+// Description:
+// Move Arrow key(WSAD for regular movement & EF to move up &  down) to set the Target(Visual Representation is Blue circle) 
+// Press SpaceBar to Hit the ball towards desired direction you set it
+// Timer is set it to 1 minutes
+//	 	
+// Github Link: https://github.com/hardik8784/GAME3002-Physics-Engines	
+// YouTube Link: https://youtu.be/Hg4JHse5Qz8	
+//*****************************************************************************

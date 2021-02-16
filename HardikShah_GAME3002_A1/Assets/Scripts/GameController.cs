@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour
 {
     public Text ScoreText;
     public Text TimerText;
-    public int MatchTime = 120;
+    public int MatchTime = 60;
     private float StartTime = 0;
     private int Score = 0;
     private bool MatchActive = false;
@@ -65,7 +65,7 @@ public class GameController : MonoBehaviour
         {
             //Debug.Log("GOAAL");
             Score++;
-            ScoreText.text = "Score :" + Score.ToString();
+            ScoreText.text = "Score: " + Score.ToString();
 
             //Debug.Log("Score is:" + Score.ToString());
         }

@@ -4,13 +4,13 @@ using UnityEngine;
 public class ProjectileComponent : MonoBehaviour
 {
     [SerializeField]
-    private Vector3 m_vInitialVelocity = Vector3.zero;
+    private Vector3 m_vInitialVelocity = Vector3.zero;                                        //Setting our initial velocity
 
-    private Rigidbody m_rb = null;
+    private Rigidbody m_rb = null;                          
 
     private GameObject m_landingDisplay = null;
 
-    private bool m_bIsGrounded = true;
+    private bool m_bIsGrounded = true;                                                        //As a safeground to check it is grounded or not after the launch
 
 
     // Start is called before the first frame update
@@ -28,15 +28,15 @@ public class ProjectileComponent : MonoBehaviour
         UpdateLandingPosition();
     }
 
-    private void CreateLandingDisplay()
+    private void CreateLandingDisplay()                                                     //Creating the Landing Display
     {
-        m_landingDisplay = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+        m_landingDisplay = GameObject.CreatePrimitive(PrimitiveType.Cylinder);              
         m_landingDisplay.transform.position = Vector3.zero;
         m_landingDisplay.transform.localScale = new Vector3(1f, 0.1f, 1f);
-        m_landingDisplay.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+        m_landingDisplay.transform.rotation = Quaternion.Euler(90f, 0f, 0f);                //Facing the Player's Direction
 
-        m_landingDisplay.GetComponent<Renderer>().material.color = Color.blue;
-        m_landingDisplay.GetComponent<Collider>().enabled = false;
+        m_landingDisplay.GetComponent<Renderer>().material.color = Color.blue;              //Render the Color into the Game as Blue
+        m_landingDisplay.GetComponent<Collider>().enabled = false;                          //Disable the collider so that it will not collide
     }
 
     
@@ -57,22 +57,26 @@ public class ProjectileComponent : MonoBehaviour
 
     private void UpdateLandingPosition()
     {
-        if (m_landingDisplay != null && m_bIsGrounded)
+        if (m_landingDisplay != null && m_bIsGrounded)                          
         {
-            m_landingDisplay.transform.position = GetLandingPosition();
+            m_landingDisplay.transform.position = GetLandingPosition();                     
         }
     }
 
     private Vector3 GetLandingPosition()
     {
+        //T = 2* (Vf- Vi)/g
+
         float fTime = 2f * (0f - m_vInitialVelocity.y / Physics.gravity.y);
 
         Vector3 vFlatVel = m_vInitialVelocity;
-        vFlatVel.y = 0f;
+        //vFlatVel.y = 0f;                                                                   //We can move into any direction.if we don't want to move into Y direction than we can uncomment it
         vFlatVel *= fTime;
 
         return transform.position + vFlatVel;
     }
+
+    //Creating the function for the changing the projectilecomponent
     #region INPUT_FUNCTIONS
     public void OnMoveForward(float value)
     {
