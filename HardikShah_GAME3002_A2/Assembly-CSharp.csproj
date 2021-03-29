@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\FlipperController.cs" />
     <Compile Include="Assets\Scripts\PlungerController.cs" />
+    <Compile Include="Assets\Scripts\BouncerController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

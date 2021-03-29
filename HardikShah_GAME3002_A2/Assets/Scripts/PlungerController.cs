@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlungerController : MonoBehaviour
 {
     float Power;
-  //  float MinPower = 0.0f;
+  //float MinPower = 0.0f;
     public float MaxPower = 1000.0f;
     public Slider PowerSlider;
     List<Rigidbody> BallList;
@@ -43,7 +43,7 @@ public class PlungerController : MonoBehaviour
                 
                 if(Power <= MaxPower)
                 {
-                    Power += 50 * Time.deltaTime;
+                    Power += 500 * Time.deltaTime;
                 }
             }
             if (Input.GetKeyUp(KeyCode.Space))
@@ -51,6 +51,8 @@ public class PlungerController : MonoBehaviour
                foreach(Rigidbody r in BallList)
                 {
                     r.AddForce(Power*Vector3.forward);
+                    //r.AddForce(Power, ForceMode.Acceleration);
+
                 }
             }
         }
