@@ -6,6 +6,8 @@ TagManager:
   tags:
   - PinBall
   - OuterArea
+  - Active_Bumper
+  - Passive_Bumper
   layers:
   - Default
   - TransparentFX
