@@ -18,7 +18,6 @@ public class PlungerController : MonoBehaviour
         PowerSlider.minValue = 0.0f;
         PowerSlider.maxValue = MaxPower;
         BallList = new List<Rigidbody>();
-       
     }
 
     // Update is called once per frame

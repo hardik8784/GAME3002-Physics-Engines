@@ -33,7 +33,6 @@ public class PinBallController : MonoBehaviour
             ScoreText.text = "Score: " + Score.ToString();
             Debug.Log("Trigger with Bash_Toy : " + Score.ToString());
         }
-
     }
 
     private void OnCollisionEnter(Collision collision)
