@@ -4,19 +4,7 @@ using UnityEngine;
 
 public class OuterArea : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)                                                 //If the Ball go OutSide the Area
     {
         if(other.tag == "OuterArea")
         {

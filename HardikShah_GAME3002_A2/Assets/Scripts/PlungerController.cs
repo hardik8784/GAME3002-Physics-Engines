@@ -6,13 +6,12 @@ using UnityEngine.UI;
 public class PlungerController : MonoBehaviour
 {
     float Power;
-  //float MinPower = 0.0f;
     public float MaxPower = 1000.0f;
-    public Slider PowerSlider;
-    List<Rigidbody> BallList;
-    bool BallReadyToRoll;
-
+    public Slider PowerSlider;                                                                  //When Pinball reaches to the Trigger,This called activated to start the game
+    List<Rigidbody> BallList;                                                                   
+    bool BallReadyToRoll;                                                                       //Checking it reaches to the trigger
     Vector3 PinBallPositionUpdate;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,9 +49,7 @@ public class PlungerController : MonoBehaviour
             {
                foreach(Rigidbody r in BallList)
                 {
-                    r.AddForce(Power*Vector3.forward);
-                    //r.AddForce(Power, ForceMode.Acceleration);
-
+                    r.AddForce(Power*Vector3.forward);                      //Adding Force to push the Ball 
                 }
             }
         }

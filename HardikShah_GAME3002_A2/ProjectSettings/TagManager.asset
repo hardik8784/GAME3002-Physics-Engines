@@ -8,6 +8,7 @@ TagManager:
   - OuterArea
   - Active_Bumper
   - Passive_Bumper
+  - Bash_Toy
   layers:
   - Default
   - TransparentFX
