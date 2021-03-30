@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PinBallController : MonoBehaviour
 {
-    public float Lives = 5.0f;
+    public Text ScoreText;
+    public Text LivesText;
+    public float Lives = 2.0f;
     public float Score = 0.0f;
 
 
@@ -17,7 +20,10 @@ public class PinBallController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Lives == 0)
+        {
+            Time.timeScale = 0;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -26,8 +32,9 @@ public class PinBallController : MonoBehaviour
         {
             GetComponent<Transform>().position = new Vector3(11.34f, 0.5f, 10.09f);
             Lives = Lives - 1;
-            Debug.Log("Lives Left:");
-            Debug.Log(Lives);
+            LivesText.text = "Lives: " + Lives.ToString();
+            //Debug.Log("Lives Left :  " + Lives.ToString());
+            //Debug.Log(Lives);
         }
 
        
@@ -38,14 +45,16 @@ public class PinBallController : MonoBehaviour
         if (collision.gameObject.tag == "Active_Bumper")
         {
             Score = Score + 100;
-            Debug.Log("Collide with Active_Bumper");
-            Debug.Log(Score);
+            //Debug.Log("Collide with Active_Bumper : " + Score.ToString());
+            //Debug.Log(Score);
+            ScoreText.text = "Score: " + Score.ToString();
         }
         if (collision.gameObject.tag == "Passive_Bumper")
         {
             Score = Score + 50;
-            Debug.Log("Collide with Passive_Bumper");
-            Debug.Log(Score);
+            ScoreText.text = "Score: " + Score.ToString();
+            //Debug.Log("Collide with Passive_Bumper : " + Score.ToString());
+            //Debug.Log(Score);
         }
     }
 }
