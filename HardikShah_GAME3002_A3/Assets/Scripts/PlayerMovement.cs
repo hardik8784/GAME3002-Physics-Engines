@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(m_bIsAccelerating)
         {
-            m_bIsAccelerating = !m_bIsAccelerating;
+            //m_bIsAccelerating = !m_bIsAccelerating;
             GetComponent<Renderer>().material.color = Color.black;
 
             m_fStartTimeStamp = Time.time;
