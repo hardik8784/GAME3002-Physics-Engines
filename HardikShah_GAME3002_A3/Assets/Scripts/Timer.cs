@@ -33,14 +33,14 @@ public class Timer : MonoBehaviour
     }
 
 
-    void DisplayTime(float TimeToDisplay)
+    void DisplayTime(float TimeToDisplay)                                   //Function for display the time
     {
         if(TimeToDisplay < 0 )
         {
             TimeToDisplay = 0;
         }
 
-        float Minutes = Mathf.FloorToInt(TimeToDisplay / 60);
+        float Minutes = Mathf.FloorToInt(TimeToDisplay / 60);           
         float Seconds = Mathf.FloorToInt(TimeToDisplay % 60);
 
         TimerText.text = string.Format("{0:00}:{1:00}", Minutes, Seconds);

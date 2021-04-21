@@ -16,7 +16,7 @@ public class SideCamera : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void LateUpdate()                                                          
     {
         transform.position = m_targetTransform.position + m_vOffset;
     }
